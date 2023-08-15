@@ -11,14 +11,14 @@ class BaseModel:
     Represents the base model for the AirBnB clone project.
     """
 
-   def __init__(self):
-       """
-       Initializes a new instance of BaseModel.
-       """
+    def __init__(self):
+        """
+        Initializes a new instance of BaseModel.
+        """
 
-       self.id = str(uuid4())
-       self.created_at = datetime.today()
-       self.updated_at = datetime.today()
+        self.id = str(uuid4())
+        self.created_at = datetime.today()
+        self.updated_at = datetime.today()
 
     def save(self):
         """
