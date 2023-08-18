@@ -33,12 +33,12 @@ class BaseModel:
         of the instance.
         """
 
-        dict = self.__dict__.copy()
-        dict["created_at"] = self.created_at.isoformat()
-        dict["updated_at"] = self.updated_at.isoformat()
-        dict["__class__"] = self.__class__.__name__
+        r_dict = self.__dict__.copy()
+        r_dict["created_at"] = self.created_at.isoformat()
+        r_dict["updated_at"] = self.updated_at.isoformat()
+        r_dict["__class__"] = self.__class__.__name__
 
-        return dict
+        return r_dict
 
     def __str__(self):
         """
