@@ -25,9 +25,13 @@ class BaseModel:
         if len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "created_at" or k == "updated_at":
-                    self.__dict__[k] datetime.strptime(v, tform)
+                    self.__dict__[k] = datetime.strptime(v, tform)
                 else:
                     self.__dict__[k] = v
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.today()
+
 
     def save(self):
         """
