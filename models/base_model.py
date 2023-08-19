@@ -28,9 +28,6 @@ class BaseModel:
                     self.__dict__[k] datetime.strptime(v, tform)
                 else:
                     self.__dict__[k] = v
-        else:
-            self.id = str(uuid4())
-            self.created_at = datetime.today()
 
     def save(self):
         """
