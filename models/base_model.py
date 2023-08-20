@@ -29,9 +29,7 @@ class BaseModel:
                 else:
                     self.__dict__[k] = v
         else:
-            self.id = str(uuid4())
-            self.created_at = datetime.today()
-
+            models.storage.new(self)
 
     def save(self):
         """
@@ -39,6 +37,7 @@ class BaseModel:
         """
 
         self.updated_at = datetime.today()
+        models.storage.save()
 
     def to_dict(self):
         """
