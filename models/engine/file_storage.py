@@ -50,7 +50,7 @@ class FileStorage:
         (only if the JSON file (__file_path) exists).
         """
         try:
-            with open(self.__class__.__name__.__file_path, "r") as f:
+            with open(FileStorage.__file_path, "r") as f:
                 obj_dict = json.load(f)
                 for obj in obj_dict.values():
                     cls_name = obj["__class__"]
