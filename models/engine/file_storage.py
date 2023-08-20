@@ -31,7 +31,7 @@ class FileStorage:
         """
 
         object_key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        self.__class__.__name__.__objects[object_key] = obj
+        FileStorage.__objects[object_key] = obj
 
     def save(self):
         """
